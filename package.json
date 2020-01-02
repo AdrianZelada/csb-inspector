@@ -1,0 +1,15 @@
+{
+  "name": "console-server-browser",
+  "version": "1.0.0",
+  "description": "capture console.log and server errors and display it in a very useful real-time screen to be able to view the console.log of the server in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Pedro Zelada Torrez",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.1.1",
+    "express": "^4.13.4"
+  }
+}
