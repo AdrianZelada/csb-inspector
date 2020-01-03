@@ -1,6 +1,6 @@
 {
-  "name": "console-server-browser",
-  "version": "1.0.0",
+  "name": "csb-inspector",
+  "version": "0.1.0",
   "description": "capture console.log and server errors and display it in a very useful real-time screen to be able to view the console.log of the server in the browser",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "socket.io": "^2.1.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "moment": "^2.24.0"
   }
 }

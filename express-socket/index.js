@@ -6,7 +6,7 @@ const logs = require('../console');
 const consoleServerBrowser = require('../index')
 module.exports = (options) => {
   const app = options.app;
-  let route = options.route || '/_console';
+  let route = options.route || '_console';
   route = route[0] === '/' ? route : `/${route}`;
   const clientApp = path.join(__dirname, 'public');
   const port = options.port || 8888;
@@ -15,7 +15,8 @@ module.exports = (options) => {
     const dir = path.join(clientApp, 'index.ejs');
     res.render(dir,{
       data: {
-        host: host
+        host: host,
+        baseUrl: route
       }
     });
   });
@@ -32,10 +33,8 @@ module.exports = (options) => {
   app.use(route, router);
   app.use(LogErrors);
   const bus = connectionSocket(options.socket, port);
-  // logs({
-  //   broadcast: bus.emitChannel,
-  // });
-  let channels = [bus.emitChannel]
+
+  let channels = [bus.emitChannel];
 
   if (options.outputs) {
     channels = [
