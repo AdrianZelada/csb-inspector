@@ -1,5 +1,5 @@
 {
-  "name": "AdrianZelada/csb-inspector",
+  "name": "@adrian-zelada/csb-inspector",
   "version": "0.1.0",
   "description": "capture console.log and server errors and display it in a very useful real-time screen to be able to view the console.log of the server in the browser",
   "main": "index.js",
