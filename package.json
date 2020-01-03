@@ -1,5 +1,5 @@
 {
-  "name": "@adrian-zelada/csb-inspector",
+  "name": "@adrianzelada/csb-inspector",
   "version": "0.1.0",
   "description": "capture console.log and server errors and display it in a very useful real-time screen to be able to view the console.log of the server in the browser",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adrian Pedro Zelada Torrez",
-  "repository": "git://github.com/AdrianZelada/csb-inspector.git",
+  "repository": "git://github.com/adrianzelada/csb-inspector.git",
   "license": "ISC",
   "dependencies": {
     "socket.io": "^2.1.1",
