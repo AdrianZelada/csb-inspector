@@ -43,7 +43,7 @@ module.exports = (options) => {
     ];
   }
   consoleServerBrowser({
-    emitChannels: channels,
+    outputs: channels,
   });
 
   function getHost(port) {
