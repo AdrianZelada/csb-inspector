@@ -11,7 +11,7 @@ Currently the library can be integrated into Expressjs,
 ## Install
 
 ```
-npm i --save @adrianzelada/csb-inspector
+npm i --save csb-inspector
 ```
 
 ## Options
