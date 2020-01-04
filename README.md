@@ -8,6 +8,12 @@ Also capturing the impressions in the console we emit in real time (SocketIo) to
 
 Currently the library can be integrated into Expressjs,
 
+## Install
+
+```
+npm i --save @adrianzelada/csb-inspector
+```
+
 ## Options
 
 ```
