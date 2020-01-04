@@ -6,7 +6,6 @@ module.exports = function (io, port) {
   }
 
   io.on('connection', (socket) => {
-    console.warn(socket.id);
     sockets.push(socket);
   });
 
