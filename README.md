@@ -6,7 +6,7 @@ This library is a help for the application developer on the server (BACKEND). Th
 Also capturing the impressions in the console we emit in real time (SocketIo) to a display panel in the browser in the url
 'http://localhost:{SERVER_PORT}/_console'
 
-Currently the library can be integrated into Expressjs,
+Currently the library can be integrated into Expressjs and Loopback 3,
 
 ## Install
 
@@ -76,3 +76,19 @@ Your Console.
 
 ![image1](https://i.ibb.co/LQ3ZnnV/Screen-Shot-2020-01-03-at-2-13-44-AM.png)
 
+## Apply librery in to Loopback 3
+
+If your application is working with Loopback 3 supported by ExpressJs
+then you must add in the middlewares configuration file
+(server/middleware.json) in the "final" object you must add a line to the configuration.
+
+```
+"final": {
+    ...
+    ...
+    ...
+    "csb-inspector/loopback-error": {}
+}
+```
+
+![imageLoopback](https://i.ibb.co/P5SBq9v/Screen-Shot-2020-01-03-at-11-07-30-PM.png)
