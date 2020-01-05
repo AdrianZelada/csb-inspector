@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const connectionSocket = require('./socket');
-const logs = require('../console');
 const consoleServerBrowser = require('../index')
 module.exports = (options) => {
   const app = options.app;
@@ -48,6 +47,8 @@ module.exports = (options) => {
 
   function getHost(port) {
     return `http://localhost:${port}`;
-  };
+  }
+
+  return app;
 };
 

@@ -44,7 +44,7 @@ const CsbInspector = require('csb-inspector/express-socket');
 .....
 .....
 
-CsbInspector({
+const appInspector = CsbInspector({
         app: app
     });
 
