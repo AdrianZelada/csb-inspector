@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const connectionSocket = require('./socket');
-const consoleServerBrowser = require('../index')
+const consoleServerBrowser = require('../index');
 module.exports = (options) => {
   const app = options.app;
   let route = options.route || '_console';
