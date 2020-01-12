@@ -10,10 +10,5 @@
   "keywords": ["console", "inspector", "csb", "logs", "log", "express", "loopback", "error", "console.log", "proxy", "console.error"],
   "repository": "git://github.com/adrianzelada/csb-inspector.git",
   "license": "ISC",
-  "dependencies": {
-    "socket.io": "^2.1.1",
-    "express": "^4.13.4",
-    "moment": "^2.24.0",
-    "ejs": "^3.0.1"
-  }
+  "dependencies": {}
 }

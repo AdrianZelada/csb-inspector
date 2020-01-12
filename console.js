@@ -2,8 +2,8 @@
 var path = require('path');
 var appDir = path.resolve(__dirname);
 var dir = appDir.split('/');
-const moment = require('moment');
-
+const utils = require('./utils');
+// const moment = require('moment');
 dir = dir.slice(0, dir.length - 2);
 dir = dir.join('/');
 module.exports = function (options) {
@@ -12,7 +12,8 @@ module.exports = function (options) {
     console = new Proxy(console, {
         get: (target, p)=>{
             return function(...args) {
-                const date = moment().format('DD-MM-YY, LTS');
+                let date = new Date();
+                const dateText = utils.parseDateTime(date);
                 let stack;
                 let path;
                 if (p !== 'warn'){
@@ -45,10 +46,9 @@ module.exports = function (options) {
                                     path = splitText[0];
                                 }
                             }
-                            printLog(date, path);
+                            printLog(dateText, path);
                             _emitChannels(path, p, args, date);
                             return target[p].apply(this, args);
-                            break;
                         case 'groupBy':{
                             let key = args[0];
                             let data = args.slice(1,args.length);
@@ -77,7 +77,8 @@ module.exports = function (options) {
                                 _emitChannels(`Group ${key}`, "group", group[key], date);
                                 console.warn('\x1b[35m%s\x1b[33m',`<==== \tGroup By "${key}" \t====>`);
                                 group[key].forEach((val)=>{
-                                    printLog(val.date, val.file);
+                                    const dateTime = utils.parseDateTime(val.date);
+                                    printLog(dateTime , val.file);
                                     console.warn('\x1b[32m%s\x1b[32m',val.args);
                                 });
                                 console.warn('\x1b[35m%s\x1b[33m',`<==== \tEnd Group "${key}" \t====>`);
@@ -87,10 +88,9 @@ module.exports = function (options) {
                         default:
                             stack = new Error().stack;
                             path = regex(stack);
-                            printLog(date, path);
+                            printLog(dateText, path);
                             _emitChannels(path, p, args, date);
                             return target[p].apply(this, args);
-                            break;
                     }
 
                 } else {
@@ -116,8 +116,8 @@ module.exports = function (options) {
     }
 
     function printLog(date, path){
-        let viewPath = `===>>> ${path}`;
-        console.warn('\x1b[35m', `{${date} }` ,'\x1b[36m',viewPath, '\x1b[32m');
+        let viewPath = `--->>> ${path}`;
+        console.warn('\x1b[35m', `->>> Locale Date, Time { ${date} }` ,'\x1b[36m',viewPath, '\x1b[32m');
     }
 
     function getPath(err) {
