@@ -4,7 +4,8 @@ It captures the impressions in the console produced by the action of the "consol
 This library is a help for the application developer on the server (BACKEND). There is a problem that at some point it is difficult to track the impressions on the console that we made at the time of development.
 
 Also capturing the impressions in the console we emit in real time (SocketIo) to a display panel in the browser in the url
-'http://localhost:{SERVER_PORT}/_console'
+'http://{YourHost}:{SERVER_PORT}/_console'
+
 
 Currently the library can be integrated into Expressjs and Loopback 3,
 
@@ -12,23 +13,6 @@ Currently the library can be integrated into Expressjs and Loopback 3,
 
 ```
 npm i --save csb-inspector
-```
-
-## Options
-
-```
-options = {
-// express application ,
-     app: app,
-// Path where the application will be, by default it will be "_console" (Optional)
-     route: "_console",
-// Port where our Socket will point, by default it will be 8888 (Optional)
-     port: 8888,
-// This option receives the data from each screen impression and gives us the possibility of extending the functionalities (Optional)
-     outputs: [(path, prop, args)=>{
-           fs.appendFileSync("file.txt", path);
-       }]
-   }
 ```
 
 ## How to Apply
@@ -50,9 +34,32 @@ const appInspector = CsbInspector({
 
 ```
 
+## Options
+
+```
+options = {
+// express application (Required),
+     app: app,
+// Host the your server, by default it will be 'http://localhost' (Optional),
+     host: 'http://localhost'
+// Port where our Socket will point, by default it will be 8888 (Optional)
+     port: 8888,
+// Path where the application will be, by default it will be "_console" (Optional)
+     route: "_console",
+// This option receives the data from each screen impression and gives us the possibility of extending the functionalities (Optional)
+     outputs: [(path, prop, args)=>{
+           fs.appendFileSync("file.txt", path);
+       }]
+   }
+
+
+CsbInspector(options);
+
+```
+
 ### Csb-Inspector Browser
 
-Open your browser and load 'http://localhost:{SERVER_PORT}/_console'
+Open your browser and load 'http://{YourHost}:{SERVER_PORT}/_console'
 
 File Code "users-route.js"
 

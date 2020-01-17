@@ -1,4 +1,5 @@
-const moment = require('moment');
+const utils = require('../utils');
+
 module.exports = function (io, port) {
   const sockets = [];
   if (!io) {
@@ -11,14 +12,13 @@ module.exports = function (io, port) {
 
 
   return {
-    emitChannel: (path, prop, args) => {
-      const date = moment().format('DD-MM-YY, LTS');
+    emitChannel: (path, prop, args, date) => {
       sockets.forEach((socket) => {
         socket.emit('console', {
           file: path,
           args,
           prop,
-          date
+          date: utils.parseDateTime(date)
         });
       }, {});
     },
