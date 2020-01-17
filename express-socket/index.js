@@ -14,7 +14,7 @@ module.exports = (options) => {
   const port = options.port || 8888;
   const host = getHost(ipHost, options.socket ? app.get('port') : port);
   router.get('/*', (req, res) => {
-    const dirHtml = path.join(clientApp, 'index.html');
+    const dirHtml = path.join(clientApp, 'console.html');
     fs.readFile(dirHtml, 'utf8',(err, data) => {
         if (err) throw err;
         data = data.replace('<title></title>',`<title>${configPack.name} - V${configPack.version}</title>`);
