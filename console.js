@@ -3,7 +3,6 @@ var path = require('path');
 var appDir = path.resolve(__dirname);
 var dir = appDir.split('/');
 const utils = require('./utils');
-// const moment = require('moment');
 dir = dir.slice(0, dir.length - 2);
 dir = dir.join('/');
 module.exports = function (options) {
@@ -20,6 +19,7 @@ module.exports = function (options) {
                     switch (p) {
                         case 'error':
                             let text = args[0];
+                            console.warn(p)
                             if(text === 'middleware'){
                                 if (args[2].status) {
                                     let url = args[1].split('?')[0];
@@ -45,20 +45,20 @@ module.exports = function (options) {
                                 } else {
                                     path = splitText[0];
                                 }
+                                // console.warn('aqui');
+                                // path = getPath(text);
                             }
                             printLog(dateText, path);
                             _emitChannels(path, p, args, date);
                             return target[p].apply(this, args);
                         case 'groupBy':{
-                            let key = args[0];
                             let data = args.slice(1,args.length);
                             let stack = new Error().stack;
-                            group[key] = group[key] ? group[key] : [];
-                            let path = regex(stack);
-                            group[key].push({
+                            group[args[0]] = group[args[0]] ? group[args[0]] : [];
+                            group[args[0]].push({
                                 date: date,
                                 prop: 'log',
-                                file: path,
+                                file: regex(stack),
                                 args: data
                             });
                             break;}
@@ -101,9 +101,8 @@ module.exports = function (options) {
     });
 
     function regex(stack, index = 2){
-        let regExp = /\(([^)]+)\)/;
         let pathFile = stack.split("\n")[index];
-        let reg = regExp.exec(pathFile);
+        let reg = /\(([^)]+)\)/.exec(pathFile);
         let path;
         if(reg){
             path=reg[1];
@@ -116,13 +115,11 @@ module.exports = function (options) {
     }
 
     function printLog(date, path){
-        let viewPath = `--->>> ${path}`;
-        console.warn('\x1b[35m', `->>> Locale Date, Time { ${date} }` ,'\x1b[36m',viewPath, '\x1b[32m');
+        console.warn('\x1b[35m', `->>> Locale Date, Time { ${date} }` ,'\x1b[36m',`--->>> ${path}`, '\x1b[32m');
     }
 
     function getPath(err) {
-        let text = new String(err);
-        let splitText = text.split("\n");
+        let splitText = new String(err).split("\n");
         if (splitText.length > 1) {
             let file = JSON.stringify(splitText[1]);
             return file.slice(8,file.length - 1);
