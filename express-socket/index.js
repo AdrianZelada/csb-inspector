@@ -21,7 +21,7 @@ module.exports = (options) => {
             data = data.replace('<title></title>',`<title>${configPack.name} - V${configPack.version}</title>`);
             data = data.replace('_baseurl_', route + '/');
             data = data.replace('<body>', `<body><span id="host" style="display: none;">${host}</span>`);
-            data = data.replace('</body>', `<span style="font-size: 10px; float:right; color: white;">V${configPack.version}</span></body>`);
+            data = data.replace('</body>', `<span style="font-size: 10px; float:right; color: white;background: black;width: 100%;text-align: right;">V${configPack.version}</span></body>`);
             res.set('Content-Type', 'text/html');
             res.send( Buffer.from(data));
         });
