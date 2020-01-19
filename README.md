@@ -49,7 +49,9 @@ options = {
 // This option receives the data from each screen impression and gives us the possibility of extending the functionalities (Optional)
      outputs: [(path, prop, args)=>{
            fs.appendFileSync("file.txt", path);
-       }]
+       }],
+// Option for not display csb-inspector in browser (Optional)
+     disabledBrowser: false //default value "false"
    }
 
 
