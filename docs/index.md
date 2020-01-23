@@ -27,7 +27,7 @@ We go to our terminal and in the folder of our NodeJs project we install the dep
 
 
 
-## Terminal
+## Terminal 
 #### csb-inspector
 
 In the main file of your nodejs application write this code
@@ -48,7 +48,7 @@ This is the simplest implementation, which helps to display the file and the lin
           // path:  "reference to file",
           // key: "type of console, 'log', 'error'",
           // args: 'arguments',
-          // date: 'Object Date, When execute console'
+          // date: 'Object Date, When execute console'   
         }
       ]
     });
@@ -62,7 +62,7 @@ Options | Description | Required | Default
 
 
 
-As we can see, we send you an object with an “outputs” property. It contains an array of functions that receive 4 parameters.
+As we can see, we send you an object with an “outputs” property. It contains an array of functions that receive 4 parameters. 
 
 This property helps us to extend the functionality of this library, obtaining those parameters we could save them in a file or other options that we consider useful. This parameter is not required.
 This implementation will be useful for any NodeJs server.
@@ -110,7 +110,7 @@ The library allows us to configure it according to our environment.
           // path:  "reference to file",
           // key: "type of console, 'log', 'error'",
           // args: 'arguments',
-          // date: 'Object Date, when execute console'
+          // date: 'Object Date, when execute console'   
             fs.appendFileSync("file.txt", path);
         }
       ]
@@ -133,7 +133,7 @@ Options | Description | Required | Default
 Open your browser and load **URL** 'http://192.16.3.89:{***ServerPort***}/debugger_logs'.
 
 > **URL** - Built with the above parameters.
->
+> 
 > **ServerPort** - Is the port where the server is running.
 
 We code
@@ -164,7 +164,7 @@ Find a bug or have a feature request? Please file an [**issue!**](https://github
 <a href="https://twitter.com/adrzelada?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @adrzelada</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-Adrian Pedro Zelada Torrez
+Adrian Pedro Zelada Torrez 
 
 Medium: [@adrianpedrozeladatorrez](https://medium.com/@adrianpedrozeladatorrez).
 
