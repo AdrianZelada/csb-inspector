@@ -1,6 +1,6 @@
 {
   "name": "csb-inspector",
-  "version": "0.3.01",
+  "version": "0.3.2",
   "description": "Capture console.log and server errors and display it in a very useful real-time screen to be able to view the console.log of the server in the browser",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,14 @@
   "author": "Adrian Pedro Zelada Torrez",
   "keywords": ["console", "inspector", "csb", "logs", "log", "express", "loopback", "error", "console.log", "proxy", "console.error"],
   "repository": "git://github.com/adrianzelada/csb-inspector.git",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "socket.io": "^2.1.1",
     "express": "^4.13.4"
+  },
+  "bugs": "https://github.com/AdrianZelada/csb-inspector/issues",
+  "homepage": "https://adrianzelada.github.io/csb-inspector",
+  "engines": {
+    "node": ">= 8.0.0"
   }
 }
