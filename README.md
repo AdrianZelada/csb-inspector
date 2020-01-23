@@ -161,7 +161,7 @@ Find a bug or have a feature request? Please file an [**issue!**](https://github
 
 ## Contact
 
-<a href="https://twitter.com/adrzelada?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @adrzelada</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/adrzelada?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @adrzelada</a>
 
 
 Adrian Pedro Zelada Torrez
