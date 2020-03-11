@@ -1,8 +1,8 @@
 # CSB-INSPECTOR
 
-View complete [**Documentation**](!https://adrianzelada.github.io/csb-inspector)
+View complete [**Documentation**](https://adrianzelada.github.io/csb-inspector)
 
-Reference [**Npm**](!https://www.npmjs.com/package/csb-inspector)
+Reference [**Npm**](https://www.npmjs.com/package/csb-inspector)
 
 ## Introduction
 
